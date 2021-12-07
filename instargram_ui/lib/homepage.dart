@@ -6,9 +6,10 @@ class _helloPageState extends State<helloPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
+        centerTitle: false,
         title: const Text('instargram',
-
             style: TextStyle(color:Colors.black,fontStyle: FontStyle.italic)),
         actions: <Widget>[
           IconButton(
@@ -21,164 +22,245 @@ class _helloPageState extends State<helloPage> {
       ),
 
       body: Column(
+
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Column(
-                  children: [
-                    Stack(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
-                            radius: 40,
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.bottomRight,
-                          height: 80,
-                          width: 80,
-                          child: SizedBox(
-                            height: 40,
-                            width: 40,
-                            child: FloatingActionButton(
-                              onPressed: null,
-                              child: Icon(Icons.add),
+          SizedBox(
+            height: 120,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
+                              radius: 40,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "박경환",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Column(
-                  children: [
-                    Stack(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
-                            radius: 40,
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            height: 80,
+                            width: 80,
+                            child: SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: FloatingActionButton(
+                                onPressed: null,
+                                child: Icon(Icons.add),
+                              ),
+                            ),
                           ),
-                        ),
-                        Container(
-                          alignment: Alignment.bottomRight,
-                          height: 80,
-                          width: 80,
-                          child: SizedBox(
-                            width: 40,
-                            height: 40,
+                        ],
+                      ),
+                      Text(
+                        "박경환",
+                        style:
+                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
+                              radius: 40,
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            height: 80,
+                            width: 80,
+                            child: SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: FloatingActionButton(
+                                onPressed: null,
+                                child: Icon(Icons.add),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        "박경환",
+                        style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
+                              radius: 40,
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            height: 80,
+                            width: 80,
+                            child: SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: FloatingActionButton(
+                                onPressed: null,
+                                child: Icon(Icons.add),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        "박경환",
+                        style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
+                              radius: 40,
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            height: 80,
+                            width: 80,
+                            child: SizedBox(
+                              width: 40,
+                              height: 40,
 
-                            child: FloatingActionButton(
-                              onPressed: null,
-                              child: Icon(Icons.add),
+                              child: FloatingActionButton(
+                                onPressed: null,
+                                child: Icon(Icons.add),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "박경환",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                        ],
+                      ),
+                      Text(
+                        "박경환",
+                        style:
+                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Column(
-                  children: [
-                    Stack(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
-                            radius: 40,
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.bottomRight,
-                          height: 80,
-                          width: 80,
-                          child: SizedBox(
-                            width: 40,
-                            height: 40,
-                            child: FloatingActionButton(
-                              onPressed: null,
-                              child: Icon(Icons.add),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
+                              radius: 40,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "박경환",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Column(
-                  children: [
-                    Stack(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
-                            radius: 40,
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.bottomRight,
-                          height: 80,
-                          width: 80,
-                          child: SizedBox(
-                            width: 40,
-                            height: 40,
-                            child: FloatingActionButton(
-                              onPressed: null,
-                              child: Icon(Icons.add),
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            height: 80,
+                            width: 80,
+                            child: SizedBox(
+                              width: 40,
+                              height: 40,
+                              child: FloatingActionButton(
+                                onPressed: null,
+                                child: Icon(Icons.add),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "박경환",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                        ],
+                      ),
+                      Text(
+                        "박경환",
+                        style:
+                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://w.namu.la/s/69e022275d62e3352d39ad1fd31409efcb15e4c04351b1e762a67ba81d2958980243de23a759e4b306a78f327173139f61cb10fe8f5034187b670470df724252493fa41600b2a0c7a34503a00be075fd'),
+                              radius: 40,
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            height: 80,
+                            width: 80,
+                            child: SizedBox(
+                              width: 40,
+                              height: 40,
+                              child: FloatingActionButton(
+                                onPressed: null,
+                                child: Icon(Icons.add),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        "박경환",
+                        style:
+                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -223,7 +305,7 @@ class _helloPageState extends State<helloPage> {
         ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('내용123182738901273987'),
+            child: Text('내용12318273890127398dddddd'),
           ),
 
           Padding(
@@ -244,7 +326,7 @@ class _helloPageState extends State<helloPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
-            label: 'Chats',
+            label: '',
           ),
         ],
       ),
