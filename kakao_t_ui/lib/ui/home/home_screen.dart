@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kakao_t_ui/ui/bmi_clac/bmi_clac_home_screen.dart';
 import 'package:kakao_t_ui/ui/counter/counter_screen.dart';
 import 'package:kakao_t_ui/ui/kakao_t/kakao_t_screen.dart';
 
@@ -14,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final _screens = [
     KakaoTScreen(),
     CounterScreen(),
+    BmiCalcHomeScreen()
   ];
   int _index = 0;
 
@@ -38,8 +40,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon : Icon(Icons.watch),
                 label: '카운터'
               ),
+              BottomNavigationBarItem(
+                  icon : Icon(Icons.fifteen_mp_outlined),
+                label: '비만'
+              ),
+
             ],
           ),
+
         );
   }
 }
