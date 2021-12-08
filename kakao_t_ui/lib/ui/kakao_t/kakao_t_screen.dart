@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kakao_t_ui/data/fake_data.dart';
 import 'package:kakao_t_ui/ui/kakao_t/conponents/ad_view.dart';
+import 'package:kakao_t_ui/ui/kakao_t/detail_screen.dart';
 
 
 import 'conponents/menu_widget.dart';
@@ -19,30 +20,40 @@ class KakaoTScreen extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: _buildbody(),
+      body: _buildbody(context),
     );
   }
 
-  Widget _buildbody() {
+  Widget _buildbody(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: ListView(
         children: [
-          _buildMenu2(),
+          _buildMenu2(context),
           _buildAds(controller),
           _buildNotice()
         ],
       ),
     );
   }
-  Widget _buildMenu2() {
+  Widget _buildMenu2(BuildContext context) {
     return GridView.count(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       childAspectRatio: 2 / 3,
       crossAxisCount: 4,
-      children: fakeMenus.map((e) => MenuWidget(menu : e)).toList(),
+      children: fakeMenus.map((menu) => GestureDetector(
+        onTap: () {
+           Navigator.push(
+                   context,
+                   MaterialPageRoute
+                 (builder: (context) => DetailScreen(
+                     menu : menu,
+                   )),
+         );
+        },
+          child: MenuWidget(menu : menu))).toList(),
     );
   }
 
