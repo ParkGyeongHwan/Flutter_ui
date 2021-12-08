@@ -10,7 +10,17 @@ class BmiCalcResultScreen extends StatelessWidget {
             title: Text('결과'),
           ),
           body: Center(
-            child: Text('결과화면'),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                '결과화면',
+                style: TextStyle(
+                    fontSize: 30
+                ),
+              ),
+            ),
           ),
         );
   }

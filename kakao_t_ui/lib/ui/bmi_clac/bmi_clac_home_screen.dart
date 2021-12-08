@@ -19,10 +19,10 @@ class BmiCalcHomeScreen extends StatelessWidget {
                 TextField(),
                 ElevatedButton(onPressed: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute
-                      (builder: (context) => BmiCalcResultScreen()),
-                  );
+                          context,
+                          MaterialPageRoute
+                        (builder: (context) => BmiCalcResultScreen()),
+                                    );
                 },
                   child: Text('계산'),),
               ],
