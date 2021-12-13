@@ -91,7 +91,7 @@ class _KakaoTScreenState extends State<KakaoTScreen> {
               margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: e.key == _index ? Colors.black : Colors.grey,
+                  color: e.key == _index ? Colors.black : Colors.white,
         ),
          );
     }).toList(),

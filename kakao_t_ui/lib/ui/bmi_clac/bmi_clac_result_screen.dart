@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
+
+
 class BmiCalcResultScreen extends StatelessWidget {
-  const BmiCalcResultScreen({Key key}) : super(key: key);
+  final String biman;
+  final Icon icon;
+
+
+  const BmiCalcResultScreen({Key key, this.biman ,this.icon}) : super(key: key);
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +23,19 @@ class BmiCalcResultScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Text(
-                '결과화면',
-                style: TextStyle(
-                    fontSize: 30
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+
+                    biman,
+
+                    style: TextStyle(
+                        fontSize: 60
+                    ),
+                  ),
+                    icon
+                ],
               ),
             ),
           ),
