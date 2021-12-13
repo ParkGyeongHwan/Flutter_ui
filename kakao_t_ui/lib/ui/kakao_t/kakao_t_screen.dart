@@ -71,7 +71,7 @@ class _KakaoTScreenState extends State<KakaoTScreen> {
         CarouselSlider(
           options: CarouselOptions(
             height: 150 ,
-            viewportFraction: 0.9,
+            viewportFraction: 1.0,
             autoPlay: true,
             onPageChanged: (index,_) {
               setState(() {

@@ -27,9 +27,7 @@ class BmiCalcResultScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-
                     biman,
-
                     style: TextStyle(
                         fontSize: 60
                     ),
