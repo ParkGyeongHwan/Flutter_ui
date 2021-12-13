@@ -22,7 +22,10 @@ class DetailScreen extends StatelessWidget {
                       Navigator.pop(context);
 
                     },
-                      child: Image.network(menu.imageUrl,fit: BoxFit.fill,)))),
+                      child: Image.network(menu.imageUrl,fit: BoxFit.fill,)
+                  )
+              )
+          ),
         );
   }
 }
