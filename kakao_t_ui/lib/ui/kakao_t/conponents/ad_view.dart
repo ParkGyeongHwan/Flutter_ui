@@ -4,7 +4,7 @@ import 'package:kakao_t_ui/model/ad.dart';
 class AdView extends StatelessWidget {
   final Ad ad;
 
-  const AdView({Key key, this.ad}) : super(key: key);
+  const AdView({Key? key,required this.ad}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

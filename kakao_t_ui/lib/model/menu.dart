@@ -3,5 +3,5 @@ class Menu {
   final String title;
   final bool isFavorite;
 
-  Menu({this.imageUrl, this.title, this.isFavorite});
+  Menu({required this.imageUrl,required this.title,required this.isFavorite});
 }

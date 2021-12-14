@@ -7,7 +7,7 @@ class BmiCalcResultScreen extends StatelessWidget {
   final Icon icon;
 
 
-  const BmiCalcResultScreen({Key key, this.biman ,this.icon}) : super(key: key);
+  const BmiCalcResultScreen({Key? key,required this.biman ,required this.icon}) : super(key: key);
 
 
 

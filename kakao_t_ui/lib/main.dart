@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kakao_t_ui/ui/counter/counter_screen.dart';
+
 import 'package:kakao_t_ui/ui/home/home_screen.dart';
 
 void main() {
@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override

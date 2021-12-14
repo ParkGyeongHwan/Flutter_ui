@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:kakao_t_ui/ui/bmi_clac/bmi_clac_home_screen.dart';
 import 'package:kakao_t_ui/ui/counter/counter_screen.dart';
 import 'package:kakao_t_ui/ui/kakao_t/kakao_t_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();

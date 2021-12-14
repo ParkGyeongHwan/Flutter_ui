@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kakao_t_ui/data/fake_data.dart';
 import 'package:kakao_t_ui/ui/kakao_t/conponents/ad_view.dart';
@@ -9,7 +8,7 @@ import 'package:kakao_t_ui/ui/kakao_t/detail_screen.dart';
 import 'conponents/menu_widget.dart';
 
 class KakaoTScreen extends StatefulWidget {
-  const KakaoTScreen({Key key}) : super(key: key);
+  const KakaoTScreen({Key? key}) : super(key: key);
 
   @override
   State<KakaoTScreen> createState() => _KakaoTScreenState();
