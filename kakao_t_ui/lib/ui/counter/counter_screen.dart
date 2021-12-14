@@ -13,11 +13,11 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('카운터'),
+        title: const Text('카운터'),
       ),
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           setState (() {
             _count++;
@@ -31,7 +31,7 @@ class _CounterScreenState extends State<CounterScreen> {
     return Center(
       child: Text(
         '$_count',
-        style: TextStyle(fontSize: 36),
+        style: const TextStyle(fontSize: 36),
       ),
     );
   }

@@ -13,9 +13,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final _screens = [
-    KakaoTScreen(),
-    CounterScreen(),
-    BmiCalcHomeScreen()
+    const KakaoTScreen(),
+    const CounterScreen(),
+    const BmiCalcHomeScreen()
   ];
   int _index = 0;
 
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 _index = val;
               });
             },
-            items: [
+            items: const [
               BottomNavigationBarItem(
                   icon : Icon(Icons.home),
                 label: 'KakaoT'

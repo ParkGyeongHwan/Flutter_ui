@@ -7,7 +7,9 @@ class BmiCalcResultScreen extends StatelessWidget {
   final Icon icon;
 
 
-  const BmiCalcResultScreen({Key? key,required this.biman ,required this.icon}) : super(key: key);
+  const BmiCalcResultScreen({Key? key,
+    required this.biman ,
+    required this.icon}) : super(key: key);
 
 
 
@@ -16,7 +18,7 @@ class BmiCalcResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
           appBar: AppBar(
-            title: Text('결과'),
+            title: const Text('결과'),
           ),
           body: Center(
             child: GestureDetector(
@@ -28,7 +30,7 @@ class BmiCalcResultScreen extends StatelessWidget {
                 children: [
                   Text(
                     biman,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 60
                     ),
                   ),

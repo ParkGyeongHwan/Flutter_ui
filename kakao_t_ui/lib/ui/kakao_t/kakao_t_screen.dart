@@ -21,7 +21,7 @@ class _KakaoTScreenState extends State<KakaoTScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           '카카오 T',
           style: TextStyle(color: Colors.black),
         ),
@@ -46,7 +46,7 @@ class _KakaoTScreenState extends State<KakaoTScreen> {
 
   Widget _buildMenu2(BuildContext context) {
     return GridView.count(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       childAspectRatio: 2 / 3,
       crossAxisCount: 4,
@@ -87,7 +87,7 @@ class _KakaoTScreenState extends State<KakaoTScreen> {
             return Container(
               width: 12.0,
               height: 12.0,
-              margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: e.key == _index ? Colors.black : Colors.white,
@@ -103,9 +103,9 @@ Widget _buildNotice() {
   return Column(
     //shrinkWrap: true, //스크롤이 안 되고 , 사이즈가 있는 Column처럼 동작
     children: List.generate(50, (index) => ListTile(
-      leading: Icon(Icons.notifications),
+      leading: const Icon(Icons.notifications),
       title: Text('공지 $index'),
-      trailing: Icon(Icons.navigate_next_outlined),
+      trailing: const Icon(Icons.navigate_next_outlined),
     )),
   );
 }

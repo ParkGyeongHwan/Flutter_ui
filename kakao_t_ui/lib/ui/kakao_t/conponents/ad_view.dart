@@ -12,30 +12,28 @@ class AdView extends StatelessWidget {
       elevation: 10,
       color: ad.color,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      ad.title,
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    Text(ad.text),
-                  ],
-                ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    ad.title,
+                    style: const TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                  Text(ad.text),
+                ],
               ),
-              Image.network(
-                ad.imageUrl,
-                height: 100,
-              )
-            ],
-          ),
+            ),
+            Image.network(
+              ad.imageUrl,
+              height: 100,
+            )
+          ],
         ),
       ),
     );

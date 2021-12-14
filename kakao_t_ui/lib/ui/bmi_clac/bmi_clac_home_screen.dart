@@ -34,7 +34,7 @@ class _BmiCalcHomeScreenState extends State<BmiCalcHomeScreen> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                     labelText: "키 (cm)",
                     hintText: '키를 입력해 주세요'
@@ -48,11 +48,11 @@ class _BmiCalcHomeScreenState extends State<BmiCalcHomeScreen> {
                   return null;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border:OutlineInputBorder(),
                     labelText: "몸무게(kg)",
                     hintText: '몸무게를 입력해 주세요'
@@ -70,34 +70,34 @@ class _BmiCalcHomeScreenState extends State<BmiCalcHomeScreen> {
                 children: [
                   ElevatedButton(onPressed: () {
                     if (_formkey.currentState?.validate() ?? false) {
-                      var biman = "";
-                      var icon;
+                      var fat = "";
+                      Icon icon;
                       var height = double.parse(myController.text);
                       var kg = double.parse(myController2.text);
                       var result = (kg / (height / 100 * height / 100));
                       if (result < 18.5) {
-                        biman = "저체중";
-                        icon = Icon(Icons.sick_outlined,
+                        fat = "저체중";
+                        icon = const Icon(Icons.sick_outlined,
                           size: 60,);
                       } else if (18.5 < result && result < 22.9) {
-                        biman = "정상";
-                        icon = Icon(Icons.sentiment_satisfied_alt_outlined,
+                        fat = "정상";
+                        icon = const Icon(Icons.sentiment_satisfied_alt_outlined,
                           size: 60,);
                       } else {
-                        biman = "비만";
-                        icon = Icon(Icons.mood_bad_outlined,
+                        fat = "비만";
+                        icon = const Icon(Icons.mood_bad_outlined,
                           size: 60,);
                       }
                       Navigator.push(
                         context,
                         MaterialPageRoute
                           (builder: (context) =>
-                            BmiCalcResultScreen(biman: biman, icon: icon)),
+                            BmiCalcResultScreen(biman: fat, icon: icon)),
                       );
                     }
                   },
 
-                    child: Text('계산'),),
+                    child: const Text('계산'),),
                 ],
               ),
             ],
