@@ -8,12 +8,33 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
           appBar: AppBar(
-            title: const Text('이미지 검색'),
+            title: const Center(child: Text('이미지 검색',style: TextStyle(color: Colors.black),)),
+            backgroundColor: (Colors.white),
           ),
-          body: GridView.count(
-            crossAxisCount: 2,
-            children: fakePhotos.map((e) => Image.network(e.previewURL)).
-            toList(),
+          body: Column(
+
+            children: [
+              const SizedBox(
+                height: 50,
+              ),
+              const TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: '검색어를 입력하세요',
+                ),
+              ),
+              const SizedBox(
+                height: 70,
+              ),
+              SizedBox(
+                height: 500,
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  children: fakePhotos.map((e) => Image.network(e.previewURL)).
+                  toList(),
+                ),
+              ),
+            ],
           ),
         );
   }
