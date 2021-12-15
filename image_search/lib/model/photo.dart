@@ -1,5 +1,5 @@
 class Photo {
-  String previewURL;
+  final String previewURL;
 
   Photo({required this.previewURL});
 }

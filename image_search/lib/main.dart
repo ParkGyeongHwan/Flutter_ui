@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:image_search/ui/home/home_screen.dart';
+
+import 'package:image_search/ui/test/test_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home:  Test_Screen(),
     );
   }
 }
