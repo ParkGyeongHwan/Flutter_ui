@@ -74,7 +74,10 @@ class _MainScreenState extends State<MainScreen> {
                   Row(
                     children: [
                       Image.network(photos[index].previewURL),
-                      Text(photos[index].tags)
+                      Text(photos[index].tags),
+                      const SizedBox(
+                        height: 110,
+                      )
                     ],
                   ),
             ),
