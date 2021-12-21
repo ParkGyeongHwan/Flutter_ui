@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 import 'model/photo.dart';
 
 class MainScreen extends StatefulWidget {
@@ -16,7 +14,7 @@ class _MainScreenState extends State<MainScreen> {
   String query = "apple";
   List<Hits> photos = [];
 
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
 
   Future<Photo> fetchPhotos() async {
     final response = await http.get(Uri.parse(
@@ -78,7 +76,10 @@ class _MainScreenState extends State<MainScreen> {
               itemBuilder: (context, index) => Row(
                 children: [
                   Image.network(photos[index].previewURL),
-                  Text(photos[index].tags),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(photos[index].tags),
+                  ),
                   const SizedBox(
                     height: 110,
                   )
