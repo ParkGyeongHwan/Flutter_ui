@@ -1,6 +1,9 @@
 import 'dart:convert';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
 import 'model/photo.dart';
 
 class MainScreen extends StatefulWidget {
@@ -76,9 +79,14 @@ class _MainScreenState extends State<MainScreen> {
               itemBuilder: (context, index) => Row(
                 children: [
                   Image.network(photos[index].previewURL),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(photos[index].tags),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        photos[index].tags,
+                        overflow: TextOverflow.fade,
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     height: 110,
