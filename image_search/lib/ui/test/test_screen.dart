@@ -53,12 +53,7 @@ class _TestScreenState extends State<TestScreen> {
       ),
       body: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              setState(() {});
-            },
-            child: const Text('Album 가져오기'),
-          ),
+
           FutureBuilder<Album>(
             future: fetchAlbum(),
             builder: (context, snapshot) {
@@ -67,7 +62,12 @@ class _TestScreenState extends State<TestScreen> {
               }
 
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
+                return const Center(child: Circ ElevatedButton(
+                    onPressed: () {
+                  setState(() {});
+                },
+              child: const Text('Album 가져오기'),
+              ),ularProgressIndicator());
               }
 
               // 데이터가 없다면
