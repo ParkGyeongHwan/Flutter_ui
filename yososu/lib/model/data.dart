@@ -7,7 +7,7 @@ class Data {
     required this.lat,
     required this.lng,
     required this.name,
-    this.openTime,
+    required this.openTime,
     required this.price,
     required this.regDt,
     required this.tel,

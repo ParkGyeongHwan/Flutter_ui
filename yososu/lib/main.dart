@@ -1,4 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+import 'model/data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +33,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Data> _data = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,10 +49,24 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            fetch();
+          },
           child: const Text('가져오기'),
         ),
       ),
     );
+  }
+
+  Future<void> fetch() async {
+    var url = Uri.parse(
+        'https://api.odcloud.kr/api/uws/v1/inventory?page=1&perPage=10&serviceKey=data-portal-test-key');
+    var response = await http.get(url);
+
+    final jsonResult = jsonDecode(response.body);
+    final jasonData = jsonResult['data'];
+
+    // print('Response status: ${response.statusCode}');
+    // print('Response body: ${response.body}');
   }
 }
