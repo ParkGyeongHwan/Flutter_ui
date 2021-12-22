@@ -41,7 +41,11 @@ class _Home_ScreenState extends State<Home_Screen> {
           future: futureMovie,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return ListView.builder(
+              return GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3, //1 개의 행에 보여줄 item 개수
+                  childAspectRatio: 1 / 2, //item 의 가로 1, 세로 2 의 비율
+                ),
                 itemCount: snapshot.data!.results.length,
                 itemBuilder: (context, index) {
                   String poster = snapshot.data!.results[index].posterPath;
