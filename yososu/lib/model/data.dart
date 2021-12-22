@@ -12,30 +12,33 @@ class Data {
     required this.regDt,
     required this.tel,
   });
-  late final String addr;
-  late final String code;
-  late final String color;
-  late final String inventory;
-  late final String lat;
-  late final String lng;
-  late final String name;
-  late final Null openTime;
-  late final String price;
-  late final String regDt;
-  late final String tel;
 
-  Data.fromJson(Map<String, dynamic> json) {
-    addr = json['addr'];
-    code = json['code'];
-    color = json['color'];
-    inventory = json['inventory'];
-    lat = json['lat'];
-    lng = json['lng'];
-    name = json['name'];
-    openTime = json['openTime'];
-    price = json['price'];
-    regDt = json['regDt'];
-    tel = json['tel'];
+  final String addr;
+  final String code;
+  final String color;
+  final String inventory;
+  final String lat;
+  final String lng;
+  final String name;
+  final String openTime;
+  final String price;
+  final String regDt;
+  final String tel;
+
+  factory Data.fromJson(Map<String, dynamic> json) {
+    return Data(
+      addr: json['addr'],
+      code: json['code'],
+      color: json['color'],
+      inventory: json['inventory'],
+      lat: json['lat'],
+      lng: json['lng'],
+      name: json['name'],
+      price: json['price'],
+      openTime: json['openTime'],
+      regDt: json['regDt'],
+      tel: json['tel'],
+    );
   }
 
   Map<String, dynamic> toJson() {
