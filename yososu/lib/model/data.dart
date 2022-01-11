@@ -20,7 +20,7 @@ class Data {
   final String lat;
   final String lng;
   final String name;
-  final String openTime;
+  final String? openTime;
   final String price;
   final String regDt;
   final String tel;

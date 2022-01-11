@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 import 'model/data.dart';
 
@@ -47,13 +48,29 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         title: const Text('요소수'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            fetch();
-          },
-          child: const Text('가져오기'),
-        ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              fetch();
+            },
+            child: const Text('가져오기'),
+          ),
+          Expanded(
+            child: ListView(
+              children: _data.map((e) {
+                return ListTile(
+                  title: Text(e.name),
+                  subtitle: Text(e.addr),
+                  trailing: Text(e.inventory),
+                  onTap: () {
+                    launch('tel:+010 2276 0570');
+                  },
+                );
+              }).toList(),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -64,7 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
     var response = await http.get(url);
 
     final jsonResult = jsonDecode(response.body);
-    final jasonData = jsonResult['data'];
+    final jsonData = jsonResult['data']; // [{}, {}, {}, ..., {}]
+
+    setState(() {
+      _data.clear();
+      jsonData.forEach((e) {
+        _data.add(Data.fromJson(e));
+      });
+    });
 
     // print('Response status: ${response.statusCode}');
     // print('Response body: ${response.body}');
