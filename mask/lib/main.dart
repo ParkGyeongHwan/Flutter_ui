@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:mask/model/store.dart';
+import 'package:mask/repository/store_repository.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,60 +29,106 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final stores = <Store>[];
-  var isLoading = true;
+  var stores = <Store>[];
+  var isLoading = false;
 
-  Future fetch() async {
-    setState(() {
-      isLoading = true;
-    });
-    var url = Uri.parse(
-        'https://gist.githubusercontent.com/junsuk5/bb7485d5f70974deee920b8f0cd1e2f0/raw/063f64d9b343120c2cb01a6555cf9b38761b1d94/sample.json?lat=37.266389&lng=126.999333&m=5000');
-
-    var response = await http.get(url);
-
-    final jsonResult = jsonDecode(utf8.decode(response.bodyBytes));
-
-    final jsonStores = jsonResult['stores'];
-
-    setState(() {
-      stores.clear();
-      jsonStores.forEach((e) {
-        stores.add(Store.fromJson(e));
-      });
-      isLoading = false;
-    });
-  }
+  final storeRepository = StoreRepository();
 
   @override
   void initState() {
-    fetch();
     super.initState();
+
+    storeRepository.fetch().then((value) {
+      setState(() {
+        stores = value;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('마스크 재고 있는 곳 : ${stores.length} 곳'),
+        title: Text('마스크 재고 있는 곳 : ${stores.where((e) {
+          return e.remainStat == 'plenty' ||
+              e.remainStat == 'some' ||
+              e.remainStat == 'few';
+        }).length} 곳'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.refresh),
-            onPressed: fetch,
+            onPressed: () {
+              storeRepository.fetch().then((e) {
+                setState(() {
+                  stores = e;
+                });
+              });
+            },
           )
         ],
       ),
       body: isLoading
           ? loadingWidget()
           : ListView(
-              children: stores.map((e) {
+              children: stores.where((e) {
+                return e.remainStat == 'plenty' ||
+                    e.remainStat == 'some' ||
+                    e.remainStat == 'few';
+              }).map((e) {
                 return ListTile(
                   title: Text(e.name),
                   subtitle: Text(e.addr),
-                  trailing: Text(e.remainStat ?? '매'),
+                  trailing: _buildRemainStatWidget(e),
                 );
               }).toList(),
             ),
+    );
+  }
+
+  Widget _buildRemainStatWidget(Store store) {
+    var remainStat = '판매중지';
+    var description = '판매중지';
+    var color = Colors.black;
+    if (store.remainStat == 'plenty') {
+      remainStat = '충분';
+      description = '100개이상';
+      color = Colors.green;
+    }
+    switch (store.remainStat) {
+      case 'plenty':
+        remainStat = '충분';
+        description = '100개이상';
+        color = Colors.green;
+        break;
+      case 'some':
+        remainStat = '보통';
+        description = '30 ~ 100갸';
+        color = Colors.yellow;
+        break;
+      case 'few':
+        remainStat = '부족';
+        description = '2 ~ 30개';
+        color = Colors.red;
+        break;
+      case 'empty':
+        remainStat = '소진임박';
+        description = '1개 이하';
+        color = Colors.grey;
+        break;
+      default:
+    }
+
+    return Column(
+      children: <Widget>[
+        Text(
+          remainStat,
+          style: TextStyle(color: color, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          description,
+          style: TextStyle(color: color),
+        ),
+      ],
     );
   }
 
