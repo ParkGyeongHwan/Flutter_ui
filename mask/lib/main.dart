@@ -83,10 +83,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 return ListTile(
                   title: Text(e.name),
                   subtitle: Text(e.addr),
-                  trailing: Text(e.remainStat),
+                  trailing: _buildRemainStatWidget(e),
                 );
               }).toList(),
             ),
+    );
+  }
+
+  Widget _buildRemainStatWidget(Store store) {
+    var remainStat = '판매중지';
+    var description = '판매중지';
+    var color = Colors.black;
+    if (store.remainStat == 'plenty') {
+      remainStat = '충분';
+      description = '100개 이상';
+      color = Colors.green;
+    }
+    return Column(
+      children: [
+        Text(
+          remainStat,
+          style: TextStyle(color: color, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          description,
+          style: TextStyle(color: color),
+        ),
+      ],
     );
   }
 
