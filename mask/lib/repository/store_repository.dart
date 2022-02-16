@@ -19,6 +19,11 @@ class StoreRepository {
       stores.add(Store.fromJson(e));
     });
     // print('완료');
-    return stores;
+
+    return stores.where((e) {
+      return e.remainStat == 'plenty' ||
+          e.remainStat == 'some' ||
+          e.remainStat == 'few';
+    }).toList();
   }
 }
