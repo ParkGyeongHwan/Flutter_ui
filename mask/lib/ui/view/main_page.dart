@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final storeModel = Provider.of<StoreModel>(context);
+    final storeModel = context.watch<StoreModel>();
     return Scaffold(
       appBar: AppBar(
         title: Text('마스크 재고 있는 곳 : ${storeModel.stores.length}곳'),
@@ -23,11 +23,7 @@ class MainPage extends StatelessWidget {
           ? loadingWidget()
           : ListView(
               children: storeModel.stores.map((e) {
-                return ListTile(
-                  title: Text(e.name),
-                  subtitle: Text(e.addr),
-                  trailing: RemainStatListTile(e),
-                );
+                return RemainStatListTile(e);
               }).toList(),
             ),
     );
