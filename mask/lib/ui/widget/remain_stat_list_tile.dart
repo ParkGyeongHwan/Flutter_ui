@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mask/model/store.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class RemainStatListTile extends StatelessWidget {
   final Store store;
@@ -13,7 +14,7 @@ class RemainStatListTile extends StatelessWidget {
       subtitle: Text(store.addr),
       trailing: _buildRemainStatWidget(store),
       onTap: () {
-        print('tap');
+        _launchURL(store.lat, store.lng);
       },
     );
   }
@@ -62,5 +63,10 @@ class RemainStatListTile extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _launchURL(num lat, num lng) async {
+    var _url = 'https://google.com/maps/search/?api=1&query=$lat,$lng';
+    if (!await launch(_url)) throw 'Could not launch $_url';
   }
 }
