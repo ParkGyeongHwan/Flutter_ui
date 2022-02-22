@@ -1,5 +1,5 @@
-class Subaway {
-  Subaway({
+class Subway {
+  Subway({
     this.beginRow,
     this.endRow,
     this.curPage,
@@ -30,15 +30,15 @@ class Subaway {
     required this.arvlMsg3,
     required this.arvlCd,
   });
-  late final Null beginRow;
-  late final Null endRow;
-  late final Null curPage;
-  late final Null pageRow;
+  late final String? beginRow;
+  late final String? endRow;
+  late final String? curPage;
+  late final String? pageRow;
   late final int totalCount;
   late final int rowNum;
   late final int selectedCount;
-  late final String subwayId;
-  late final Null subwayNm;
+  late final String? subwayId;
+  late final String? subwayNm;
   late final String updnLine;
   late final String trainLineNm;
   late final String subwayHeading;
@@ -46,11 +46,11 @@ class Subaway {
   late final String statnTid;
   late final String statnId;
   late final String statnNm;
-  late final Null trainCo;
+  late final String? trainCo;
   late final String ordkey;
   late final String subwayList;
   late final String statnList;
-  late final Null btrainSttus;
+  late final String? btrainSttus;
   late final String barvlDt;
   late final String btrainNo;
   late final String bstatnId;
@@ -60,7 +60,7 @@ class Subaway {
   late final String arvlMsg3;
   late final String arvlCd;
 
-  Subaway.fromJson(Map<String, dynamic> json) {
+  Subway.fromJson(Map<String, dynamic> json) {
     beginRow = json['beginRow'];
     endRow = json['endRow'];
     curPage = json['curPage'];
